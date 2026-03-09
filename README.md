@@ -1,4 +1,4 @@
-# POLYHEAL AI – Multi-Language Self-Healing Developer Agent
+# DEBUG AI – Multi-Language Self-Healing Developer Agent
 
 > **An AI-powered debugging platform** that monitors developer commands, detects errors across 6 programming languages, generates multiple ranked solutions with time/space complexity analysis, and applies fixes — all from a single dashboard.
 
