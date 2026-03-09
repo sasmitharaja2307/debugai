@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Polyheal state files
+.polyheal_state.json
+.polyheal_memory.json
+.polyheal_backups/
+logs/
+
+# Node / Frontend
+node_modules/
+dist/
+.vite/
+out/
+*.vsix
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
