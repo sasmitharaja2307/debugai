@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Code Optimizer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Syntax highlighting – Prism.js (Tomorrow Night theme) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"/>
+</head>
+<body>
+
+<!-- ── Header ───────────────────────────────────────────────── -->
+<header>
+  <div class="logo">⚡ AI Code Optimizer</div>
+  <div class="header-right">
+    <span id="mode-badge" class="badge-mode offline">⚙ Offline Mode</span>
+    <span id="status-dot" class="status-dot" title="Backend status"></span>
+  </div>
+</header>
+
+<!-- ── Toolbar ──────────────────────────────────────────────── -->
+<div class="toolbar">
+  <select id="language" onchange="onLangChange()">
+    <option value="python">🐍 Python</option>
+    <option value="javascript">🌐 JavaScript</option>
+    <option value="typescript">🟦 TypeScript</option>
+    <option value="java">☕ Java</option>
+    <option value="go">🐹 Go</option>
+    <option value="cpp">⚙ C++</option>
+    <option value="c">🔧 C</option>
+    <option value="ruby">💎 Ruby</option>
+    <option value="php">🐘 PHP</option>
+  </select>
+
+  <div class="btn-group">
+    <button id="btn-optimize" onclick="runOptimize()">⚡ Optimize</button>
+    <button id="btn-explain"  onclick="runExplain()">🔍 Explain</button>
+    <button id="btn-complex"  onclick="runComplexity()">📊 Complexity</button>
+    <button id="btn-run"      onclick="runCode()">▶ Run</button>
+    <button id="btn-clear"    onclick="clearAll()">🗑 Clear</button>
+  </div>
+
+  <div class="file-info">
+    <span id="line-count">0 lines</span>
+    <span id="char-count">0 chars</span>
+  </div>
+</div>
+
+<!-- ── Main Editor Grid ──────────────────────────────────────── -->
+<main>
+  <div class="editor-grid">
+
+    <!-- Input Panel -->
+    <div class="panel">
+      <div class="panel-header">
+        📝 Your Code
+        <div class="panel-actions">
+          <button class="icon-btn" onclick="pasteExample()" title="Load example">📋 Example</button>
+          <button class="icon-btn" onclick="copyInput()" title="Copy input">⎘</button>
+        </div>
+      </div>
+      <div class="editor-wrap">
+        <div id="line-numbers" class="line-numbers" aria-hidden="true">1</div>
+        <textarea
+          id="input-code"
+          spellcheck="false"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder="# Paste your code here…"
+          oninput="onCodeInput()"
+          onscroll="syncScroll()"
+          onkeydown="handleTab(event)"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Output Panel -->
+    <div class="panel">
+      <div class="panel-header">
+        <span id="output-title">✅ Output</span>
+        <div class="panel-actions">
+          <button class="icon-btn" id="btn-diff" onclick="toggleDiff()" style="display:none" title="Show diff">⇄ Diff</button>
+          <button class="icon-btn" onclick="copyOutput()" title="Copy output">⎘ Copy</button>
+        </div>
+      </div>
+      <div id="output-area" class="output-box">
+        <span class="placeholder">Click Optimize, Explain, Complexity or Run…</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Run Output Terminal ────────────────────────────────── -->
+  <div id="run-panel" class="run-panel hidden">
+    <div class="run-header">
+      <span>▶ Execution Output</span>
+      <span id="run-meta" class="run-meta"></span>
+      <button class="icon-btn" onclick="closeRunPanel()">✕</button>
+    </div>
+    <pre id="run-stdout" class="run-stdout"></pre>
+    <pre id="run-stderr" class="run-stderr hidden"></pre>
+  </div>
+
+  <!-- ── Loader ─────────────────────────────────────────────── -->
+  <div id="loader" class="loader hidden">
+    <div class="spinner"></div>
+    <span id="loader-text">Processing…</span>
+  </div>
+
+  <!-- ── Info Cards ─────────────────────────────────────────── -->
+  <div id="cards-area" class="cards-area"></div>
+</main>
+
+<footer>
+  Powered by <strong>OpenAI GPT-4o-mini</strong> (AI) + Smart AST Engine (Offline) &nbsp;·&nbsp;
+  <a href="/api/health" target="_blank" style="color:#58a6ff">API Docs</a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
