@@ -1,5 +1,5 @@
 """
-AI Code Optimizer – Configuration
+Debug AI – Configuration
 Reads settings from environment variables / .env file.
 """
 

@@ -10,7 +10,7 @@ let _showingDiff   = false;
 // ── Examples per language ─────────────────────────────────────
 const EXAMPLES = {
   python: `# Buggy Python — try Optimize!
-print("Testing AI Code Optimizer")
+print("Testing Debug AI")
 
 numbers = [5, 2, 9, 1]
 numbers.sort()

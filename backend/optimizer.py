@@ -1,5 +1,5 @@
 """
-AI Code Optimizer – Core Optimization Engine
+Debug AI – Core Optimization Engine
 Supports: Python (AST), JavaScript, Java, Go, C/C++, and more via rules.
 Uses OpenAI GPT when API key is set, smart offline engine otherwise.
 """

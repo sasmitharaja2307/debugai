@@ -1,5 +1,5 @@
 """
-AI Code Optimizer – Flask Backend
+Debug AI – Flask Backend
 Entry point: python backend/app.py
 Serves the frontend AND provides all API endpoints.
 """
@@ -36,7 +36,7 @@ def serve_static(path):
 # ── Health Check ──────────────────────────────────────────────
 @app.route("/api/health", methods=["GET"])
 def health():
-    return jsonify({"status": "ok", "service": "AI Code Optimizer", "version": "2.0"})
+    return jsonify({"status": "ok", "service": "Debug AI", "version": "2.0"})
 
 # ── Optimize ──────────────────────────────────────────────────
 @app.route("/api/optimize", methods=["POST"])
@@ -154,7 +154,7 @@ def run_code():
 # ── Entry Point ───────────────────────────────────────────────
 if __name__ == "__main__":
     print(f"\n{'='*50}")
-    print(f"  AI Code Optimizer")
+    print(f"  Debug AI")
     print(f"  Open → http://localhost:{Config.PORT}")
     print(f"{'='*50}\n")
     app.run(host=Config.HOST, port=Config.PORT, debug=Config.DEBUG)
