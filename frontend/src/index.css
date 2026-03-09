@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-surface-600;
+  }
+  body {
+    @apply bg-surface-900 text-white;
+    font-family: 'Inter', sans-serif;
+  }
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-800 border border-surface-600 rounded-xl p-5 shadow-lg;
+  }
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 text-white font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 active:scale-95;
+  }
+  .btn-ghost {
+    @apply border border-surface-500 hover:bg-surface-700 text-gray-300 font-medium px-4 py-2 rounded-lg transition-all duration-200;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .badge-critical  { @apply bg-red-900/60 text-red-300 border border-red-700/50; }
+  .badge-warning   { @apply bg-yellow-900/60 text-yellow-300 border border-yellow-700/50; }
+  .badge-info      { @apply bg-blue-900/60 text-blue-300 border border-blue-700/50; }
+  .badge-success   { @apply bg-green-900/60 text-green-300 border border-green-700/50; }
+  .badge-medium    { @apply bg-orange-900/60 text-orange-300 border border-orange-700/50; }
+
+  .score-ring {
+    @apply inline-flex items-center justify-center rounded-full font-bold text-sm w-10 h-10 border-2;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #141625; }
+::-webkit-scrollbar-thumb { background: #3237ce; border-radius: 3px; }
+
+/* Animated gradient header */
+.gradient-text {
+  background: linear-gradient(135deg, #748eff 0%, #c084fc 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

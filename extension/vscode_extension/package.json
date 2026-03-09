@@ -1,0 +1,92 @@
+{
+  "name": "polyheal-vscode",
+  "displayName": "POLYHEAL AI – Self-Healing Developer Agent",
+  "description": "Multi-language AI debugging agent: auto-detects errors, generates multi-solution fixes with complexity analysis, and applies patches directly in VS Code.",
+  "version": "1.0.0",
+  "publisher": "polyheal",
+  "engines": { "vscode": "^1.87.0" },
+  "categories": ["Other", "Debuggers", "Linters"],
+  "keywords": ["AI", "debugging", "self-healing", "polyheal", "error-fix"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "polyheal.runCommand",
+        "title": "PolyHeal: Run & Heal Command",
+        "icon": "$(zap)"
+      },
+      {
+        "command": "polyheal.analyzeSelection",
+        "title": "PolyHeal: Analyze Selected Code"
+      },
+      {
+        "command": "polyheal.openDashboard",
+        "title": "PolyHeal: Open Dashboard"
+      },
+      {
+        "command": "polyheal.checkEnvironment",
+        "title": "PolyHeal: Check Environment"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "polyheal.analyzeSelection",
+          "when": "editorHasSelection",
+          "group": "polyheal"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "POLYHEAL AI",
+      "properties": {
+        "polyheal.apiUrl": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "description": "URL of the POLYHEAL AI backend API."
+        },
+        "polyheal.autoHeal": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically analyze terminal errors when detected."
+        },
+        "polyheal.showComplexity": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show time/space complexity in solution cards."
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "polyheal",
+          "title": "POLYHEAL AI",
+          "icon": "$(zap)"
+        }
+      ]
+    },
+    "views": {
+      "polyheal": [
+        { "id": "polyheal.solutions", "name": "Solutions" },
+        { "id": "polyheal.environment", "name": "Environment" },
+        { "id": "polyheal.history", "name": "Error History" }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.8"
+  }
+}
