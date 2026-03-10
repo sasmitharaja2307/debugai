@@ -31,12 +31,12 @@ export default function App() {
       <Toaster
         position="top-right"
         toastOptions={{
-          style: { background: '#1c1f33', color: '#e2e8f0', border: '1px solid #3d47e8' },
+          style: { background: '#ffffff', color: '#1e293b', border: '1px solid #e2e8f0' },
         }}
       />
 
       {/* ── Header ── */}
-      <header className="border-b border-surface-700 bg-surface-800/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b border-surface-600 bg-white/90 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center shadow-lg shadow-brand-600/30">
@@ -44,7 +44,7 @@ export default function App() {
             </div>
             <div>
               <h1 className="font-bold text-lg gradient-text leading-none">POLYHEAL AI</h1>
-              <p className="text-xs text-gray-500 leading-none mt-0.5">Self-Healing Developer Agent</p>
+              <p className="text-xs text-slate-400 leading-none mt-0.5">Self-Healing Developer Agent</p>
             </div>
           </div>
 
@@ -53,9 +53,9 @@ export default function App() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex items-center gap-2 text-xs text-brand-400 bg-brand-900/30 px-3 py-1.5 rounded-full border border-brand-700/50"
+                className="flex items-center gap-2 text-xs text-brand-600 bg-brand-50 px-3 py-1.5 rounded-full border border-brand-200"
               >
-                <span className="w-1.5 h-1.5 bg-brand-400 rounded-full animate-pulse" />
+                <span className="w-1.5 h-1.5 bg-brand-600 rounded-full animate-pulse" />
                 Analyzing…
               </motion.div>
             )}
@@ -75,13 +75,13 @@ export default function App() {
               onClick={() => setActiveTab(id)}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200
                 ${activeTab === id
-                  ? 'bg-brand-600/20 text-brand-400 border border-brand-600/40'
-                  : 'text-gray-400 hover:bg-surface-700 hover:text-gray-200'}`}
+                  ? 'bg-brand-50 text-brand-600 border border-brand-200'
+                  : 'text-slate-500 hover:bg-surface-700 hover:text-slate-700'}`}
             >
               <Icon size={15} />
               {label}
               {activeTab === id && (
-                <ChevronRight size={12} className="ml-auto text-brand-400" />
+                <ChevronRight size={12} className="ml-auto text-brand-600" />
               )}
             </button>
           ))}

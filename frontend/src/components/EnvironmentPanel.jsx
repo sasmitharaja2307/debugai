@@ -10,9 +10,9 @@ import { getEnvironmentStatus } from '../api/client'
 import toast from 'react-hot-toast'
 
 const SEVERITY_MAP = {
-  critical: { icon: XCircle,       cls: 'text-red-400',    bg: 'bg-red-900/20 border-red-700/30',    badge: 'badge-critical'  },
-  warning:  { icon: AlertTriangle, cls: 'text-yellow-400', bg: 'bg-yellow-900/20 border-yellow-700/30', badge: 'badge-warning' },
-  info:     { icon: Info,          cls: 'text-blue-400',   bg: 'bg-blue-900/20 border-blue-700/30',    badge: 'badge-info'    },
+  critical: { icon: XCircle,       cls: 'text-red-500',    bg: 'bg-red-50 border-red-200',       badge: 'badge-critical'  },
+  warning:  { icon: AlertTriangle, cls: 'text-amber-500',  bg: 'bg-amber-50 border-amber-200',   badge: 'badge-warning'   },
+  info:     { icon: Info,          cls: 'text-blue-500',   bg: 'bg-blue-50 border-blue-200',     badge: 'badge-info'      },
 }
 
 export default function EnvironmentPanel() {
@@ -40,7 +40,7 @@ export default function EnvironmentPanel() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h2 className="font-semibold text-gray-100">Environment Health</h2>
+        <h2 className="font-semibold text-slate-800">Environment Health</h2>
         <button
           onClick={fetchStatus}
           disabled={loading}
@@ -54,13 +54,13 @@ export default function EnvironmentPanel() {
       {/* Summary cards */}
       <div className="grid grid-cols-3 gap-3">
         {[
-          { label: 'Total Issues',  value: issues.length, color: 'text-gray-200' },
-          { label: 'Critical',      value: critical,       color: 'text-red-400'  },
-          { label: 'Warnings',      value: warnings,       color: 'text-yellow-400' },
+          { label: 'Total Issues',  value: issues.length, color: 'text-slate-800' },
+          { label: 'Critical',      value: critical,       color: 'text-red-500'  },
+          { label: 'Warnings',      value: warnings,       color: 'text-amber-500' },
         ].map(({ label, value, color }) => (
           <div key={label} className="card text-center">
             <p className={`text-3xl font-bold ${color}`}>{value}</p>
-            <p className="text-xs text-gray-500 mt-1">{label}</p>
+            <p className="text-xs text-slate-400 mt-1">{label}</p>
           </div>
         ))}
       </div>
@@ -68,7 +68,7 @@ export default function EnvironmentPanel() {
       {/* Issue list */}
       <div className="card">
         {issues.length === 0 && !loading ? (
-          <div className="flex items-center gap-2 text-green-400 py-4 justify-center">
+          <div className="flex items-center gap-2 text-green-600 py-4 justify-center">
             <CheckCircle2 size={18} />
             <span className="text-sm font-medium">All systems healthy!</span>
           </div>
@@ -90,9 +90,9 @@ export default function EnvironmentPanel() {
                       <span className={`badge ${badge}`}>{issue.severity}</span>
                       <span className="badge badge-info">{issue.category}</span>
                     </div>
-                    <p className="text-sm text-gray-300 mt-1">{issue.message}</p>
+                    <p className="text-sm text-slate-700 mt-1">{issue.message}</p>
                     {issue.suggestion && (
-                      <p className="text-xs text-gray-500 mt-1 font-mono">{issue.suggestion}</p>
+                      <p className="text-xs text-slate-400 mt-1 font-mono">{issue.suggestion}</p>
                     )}
                   </div>
                 </motion.div>

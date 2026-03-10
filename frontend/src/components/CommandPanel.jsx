@@ -53,23 +53,23 @@ export default function CommandPanel({ onReport, onRunningChange }) {
     <div className="space-y-4">
       {/* Title */}
       <div className="flex items-center gap-2 mb-1">
-        <Terminal size={18} className="text-brand-400" />
-        <h2 className="font-semibold text-gray-100">Run Command</h2>
+        <Terminal size={18} className="text-brand-600" />
+        <h2 className="font-semibold text-slate-800">Run Command</h2>
       </div>
 
       {/* Command input */}
       <div className="card flex flex-col gap-3">
         <div className="flex gap-3">
           <div className="flex-1 relative">
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 font-mono text-sm">$</span>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-mono text-sm">$</span>
             <input
               type="text"
               value={command}
               onChange={(e) => setCommand(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleRun()}
               placeholder="python app.py"
-              className="w-full bg-surface-900 border border-surface-600 rounded-lg pl-7 pr-4 py-2.5
-                         text-sm font-mono text-gray-100 placeholder-gray-600
+              className="w-full bg-white border border-surface-600 rounded-lg pl-7 pr-4 py-2.5
+                         text-sm font-mono text-slate-800 placeholder-slate-400
                          focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/50 transition"
             />
           </div>
@@ -94,7 +94,7 @@ export default function CommandPanel({ onReport, onRunningChange }) {
             <button
               key={cmd}
               onClick={() => setCommand(cmd)}
-              className="text-xs bg-surface-700 hover:bg-surface-600 border border-surface-600 text-gray-400 hover:text-gray-200 px-2.5 py-1 rounded-md font-mono transition-all"
+              className="text-xs bg-slate-100 hover:bg-slate-200 border border-surface-600 text-slate-500 hover:text-slate-700 px-2.5 py-1 rounded-md font-mono transition-all"
             >
               {cmd}
             </button>
@@ -103,7 +103,7 @@ export default function CommandPanel({ onReport, onRunningChange }) {
 
         {/* Optional code snippet */}
         <details className="group">
-          <summary className="flex items-center gap-2 text-xs text-gray-500 cursor-pointer hover:text-gray-300 transition select-none">
+          <summary className="flex items-center gap-2 text-xs text-slate-400 cursor-pointer hover:text-slate-600 transition select-none">
             <ChevronDown size={12} className="group-open:rotate-180 transition-transform" />
             Attach code snippet (optional – improves AI analysis)
           </summary>
@@ -112,8 +112,8 @@ export default function CommandPanel({ onReport, onRunningChange }) {
             onChange={(e) => setSnippet(e.target.value)}
             placeholder="Paste your code here..."
             rows={6}
-            className="mt-2 w-full bg-surface-900 border border-surface-600 rounded-lg p-3
-                       text-xs font-mono text-gray-300 placeholder-gray-600
+            className="mt-2 w-full bg-white border border-surface-600 rounded-lg p-3
+                       text-xs font-mono text-slate-700 placeholder-slate-400
                        focus:outline-none focus:border-brand-500 resize-y"
           />
         </details>
@@ -127,19 +127,19 @@ export default function CommandPanel({ onReport, onRunningChange }) {
           className="card"
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs text-gray-400 font-mono">Output – exit code: {rawOutput.run_result?.returncode}</span>
+            <span className="text-xs text-slate-500 font-mono">Output – exit code: {rawOutput.run_result?.returncode}</span>
             <span className={`badge ${rawOutput.success ? 'badge-success' : 'badge-critical'}`}>
               {rawOutput.success ? '✓ Success' : '✗ Failed'}
             </span>
           </div>
 
           {rawOutput.run_result?.stdout && (
-            <pre className="text-xs font-mono bg-surface-900 rounded-lg p-3 text-green-300 overflow-auto max-h-40 whitespace-pre-wrap">
+            <pre className="text-xs font-mono bg-green-50 rounded-lg p-3 text-green-700 overflow-auto max-h-40 whitespace-pre-wrap">
               {rawOutput.run_result.stdout}
             </pre>
           )}
           {rawOutput.run_result?.stderr && (
-            <pre className="mt-2 text-xs font-mono bg-surface-900 rounded-lg p-3 text-red-400 overflow-auto max-h-40 whitespace-pre-wrap">
+            <pre className="mt-2 text-xs font-mono bg-red-50 rounded-lg p-3 text-red-600 overflow-auto max-h-40 whitespace-pre-wrap">
               {rawOutput.run_result.stderr}
             </pre>
           )}
