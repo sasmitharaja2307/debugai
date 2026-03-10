@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – GitHub Issue Search
+﻿"""
+SELFHEAL AI – GitHub Issue Search
 Queries the GitHub Search API for relevant issues and discussions.
 """
 
@@ -28,7 +28,7 @@ class GitHubIssueSearch:
         params = urllib.parse.urlencode({"q": full_query, "per_page": max_results, "sort": "reactions"})
         url = f"{_GH_API}?{params}"
 
-        headers = {"Accept": "application/vnd.github.v3+json", "User-Agent": "PolyHeal-AI"}
+        headers = {"Accept": "application/vnd.github.v3+json", "User-Agent": "SelfHeal-AI"}
         if self._token:
             headers["Authorization"] = f"token {self._token}"
 

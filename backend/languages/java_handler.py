@@ -1,4 +1,4 @@
-"""POLYHEAL AI – Java Language Handler"""
+﻿"""SELFHEAL AI – Java Language Handler"""
 
 import re
 from backend.utils.logger import get_logger

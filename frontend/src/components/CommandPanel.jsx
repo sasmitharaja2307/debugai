@@ -1,5 +1,5 @@
-/**
- * POLYHEAL AI – Command Panel
+﻿/**
+ * SELFHEAL AI – Command Panel
  * Developer terminal input: run commands and view raw output.
  */
 

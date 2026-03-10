@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Google Search (via SerpAPI or DuckDuckGo fallback)
+﻿"""
+SELFHEAL AI – Google Search (via SerpAPI or DuckDuckGo fallback)
 Fetches web search results for debugging context.
 """
 

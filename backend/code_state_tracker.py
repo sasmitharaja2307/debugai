@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Code State Tracker (Time-Travel Debugging)
+﻿"""
+SELFHEAL AI – Code State Tracker (Time-Travel Debugging)
 Snapshots entire project state before/after each run for diff-based analysis.
 """
 
@@ -14,7 +14,7 @@ from backend.utils.logger import get_logger
 
 log = get_logger(__name__)
 
-_IGNORE = {".git", "__pycache__", "node_modules", ".polyheal_backups", "logs", ".venv", "venv"}
+_IGNORE = {".git", "__pycache__", "node_modules", ".selfheal_backups", "logs", ".venv", "venv"}
 _TRACKED_EXTENSIONS = {
     ".py", ".js", ".ts", ".java", ".go", ".c", ".cpp", ".h",
     ".json", ".toml", ".txt", ".yml", ".yaml", ".env", ".mod", ".sum",
@@ -73,7 +73,7 @@ class CodeStateTracker:
     Allows diffing any two snapshots to identify what changed between runs.
     """
 
-    _STORE_FILE = ".polyheal_state.json"
+    _STORE_FILE = ".SELFHEAL_state.json"
 
     def __init__(self, project_root: str, max_history: int = 20):
         self.root = Path(project_root)

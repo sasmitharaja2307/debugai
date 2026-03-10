@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Debug Memory Store
+﻿"""
+SELFHEAL AI – Debug Memory Store
 Persists debugging cases (error → solution mappings) with vector-based similarity.
 Self-learning: suggests previously successful fixes for similar errors.
 """
@@ -16,7 +16,7 @@ from backend.utils.logger import get_logger
 
 log = get_logger(__name__)
 
-_STORE_FILE = ".polyheal_memory.json"
+_STORE_FILE = ".selfheal_memory.json"
 
 
 @dataclass

@@ -1,57 +1,57 @@
-{
-  "name": "polyheal-vscode",
-  "displayName": "POLYHEAL AI – Self-Healing Developer Agent",
+﻿{
+  "name": "selfheal-vscode",
+  "displayName": "SELFHEAL AI – Self-Healing Developer Agent",
   "description": "Multi-language AI debugging agent: auto-detects errors, generates multi-solution fixes with complexity analysis, and applies patches directly in VS Code.",
   "version": "1.0.0",
-  "publisher": "polyheal",
+  "publisher": "selfheal",
   "engines": { "vscode": "^1.87.0" },
   "categories": ["Other", "Debuggers", "Linters"],
-  "keywords": ["AI", "debugging", "self-healing", "polyheal", "error-fix"],
+  "keywords": ["AI", "debugging", "self-healing", "selfheal", "error-fix"],
   "activationEvents": ["onStartupFinished"],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "polyheal.runCommand",
-        "title": "PolyHeal: Run & Heal Command",
+        "command": "selfheal.runCommand",
+        "title": "SelfHeal: Run & Heal Command",
         "icon": "$(zap)"
       },
       {
-        "command": "polyheal.analyzeSelection",
-        "title": "PolyHeal: Analyze Selected Code"
+        "command": "selfheal.analyzeSelection",
+        "title": "SelfHeal: Analyze Selected Code"
       },
       {
-        "command": "polyheal.openDashboard",
-        "title": "PolyHeal: Open Dashboard"
+        "command": "selfheal.openDashboard",
+        "title": "SelfHeal: Open Dashboard"
       },
       {
-        "command": "polyheal.checkEnvironment",
-        "title": "PolyHeal: Check Environment"
+        "command": "selfheal.checkEnvironment",
+        "title": "SelfHeal: Check Environment"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "polyheal.analyzeSelection",
+          "command": "selfheal.analyzeSelection",
           "when": "editorHasSelection",
-          "group": "polyheal"
+          "group": "selfheal"
         }
       ]
     },
     "configuration": {
-      "title": "POLYHEAL AI",
+      "title": "SELFHEAL AI",
       "properties": {
-        "polyheal.apiUrl": {
+        "selfheal.apiUrl": {
           "type": "string",
           "default": "http://localhost:8000",
-          "description": "URL of the POLYHEAL AI backend API."
+          "description": "URL of the SELFHEAL AI backend API."
         },
-        "polyheal.autoHeal": {
+        "selfheal.autoHeal": {
           "type": "boolean",
           "default": true,
           "description": "Automatically analyze terminal errors when detected."
         },
-        "polyheal.showComplexity": {
+        "selfheal.showComplexity": {
           "type": "boolean",
           "default": true,
           "description": "Show time/space complexity in solution cards."
@@ -61,17 +61,17 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "polyheal",
-          "title": "POLYHEAL AI",
+          "id": "selfheal",
+          "title": "SELFHEAL AI",
           "icon": "$(zap)"
         }
       ]
     },
     "views": {
-      "polyheal": [
-        { "id": "polyheal.solutions", "name": "Solutions" },
-        { "id": "polyheal.environment", "name": "Environment" },
-        { "id": "polyheal.history", "name": "Error History" }
+      "selfheal": [
+        { "id": "selfheal.solutions", "name": "Solutions" },
+        { "id": "selfheal.environment", "name": "Environment" },
+        { "id": "selfheal.history", "name": "Error History" }
       ]
     }
   },

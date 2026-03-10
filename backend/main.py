@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Entry Point
+﻿"""
+SELFHEAL AI – Entry Point
 Run with:  uvicorn backend.main:app --reload --port 8000
 Or CLI:    python -m backend.main run "python app.py"
 """
@@ -11,12 +11,12 @@ import uvicorn
 from backend.api_server import app
 from backend.utils.logger import get_logger
 
-log = get_logger("polyheal.main")
+log = get_logger("selfheal.main")
 
 
 def start_server(host: str = "0.0.0.0", port: int = 8000, reload: bool = True) -> None:
     """Launch the FastAPI server."""
-    log.info("Starting POLYHEAL AI API server on %s:%d", host, port)
+    log.info("Starting SELFHEAL AI API server on %s:%d", host, port)
     uvicorn.run("backend.api_server:app", host=host, port=port, reload=reload)
 
 

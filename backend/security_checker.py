@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Security Checker
+﻿"""
+SELFHEAL AI – Security Checker
 Evaluates proposed fixes for security vulnerabilities.
 """
 

@@ -1,5 +1,5 @@
-/**
- * POLYHEAL AI – Code State Diff Viewer
+﻿/**
+ * SELFHEAL AI – Code State Diff Viewer
  * Shows time-travel snapshots and file-level diffs.
  */
 

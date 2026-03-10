@@ -1,5 +1,5 @@
-// ─────────────────────────────────────────────────────────────
-// POLYHEAL AI – JavaScript Bug Examples  (Node.js)
+﻿// ─────────────────────────────────────────────────────────────
+// SELFHEAL AI – JavaScript Bug Examples  (Node.js)
 // ─────────────────────────────────────────────────────────────
 
 const axios = require('axios');  // Bug 1: Module not installed

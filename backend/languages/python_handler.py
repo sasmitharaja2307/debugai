@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Python Language Handler
+﻿"""
+SELFHEAL AI – Python Language Handler
 Factory Pattern: encapsulates Python-specific debug strategies.
 """
 

@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Patch Applier Utility
+﻿"""
+SELFHEAL AI – Patch Applier Utility
 Safely applies code patches and command fixes to the developer's project.
 Uses the Command Pattern for safe, reversible operations.
 """
@@ -20,7 +20,7 @@ class PatchApplier:
 
     def __init__(self, project_root: str):
         self.project_root = Path(project_root)
-        self._backup_dir = self.project_root / ".polyheal_backups"
+        self._backup_dir = self.project_root / ".selfheal_backups"
         self._backup_dir.mkdir(exist_ok=True)
 
     # ------------------------------------------------------------------

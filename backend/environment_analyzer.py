@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Environment Analyzer
+﻿"""
+SELFHEAL AI – Environment Analyzer
 Inspects project configuration files and detects environment issues.
 """
 

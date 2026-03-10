@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Command Runner
+﻿"""
+SELFHEAL AI – Command Runner
 Uses Python subprocess to execute developer commands and capture all output.
 Observer Pattern: notifies subscribers on each run event.
 """

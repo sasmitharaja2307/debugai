@@ -1,5 +1,5 @@
-/**
- * POLYHEAL AI – Environment Panel
+﻿/**
+ * SELFHEAL AI – Environment Panel
  * Shows project environment health and dependency issues.
  */
 

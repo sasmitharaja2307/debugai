@@ -1,5 +1,5 @@
-/**
- * POLYHEAL AI – API Client
+﻿/**
+ * SELFHEAL AI – API Client
  * Centralised axios instance that talks to the FastAPI backend.
  */
 
@@ -18,7 +18,7 @@ api.interceptors.response.use(
   (res) => res,
   (err) => {
     const msg = err.response?.data?.detail || err.message || 'API request failed'
-    console.error('[PolyHeal API]', msg)
+    console.error('[SelfHeal API]', msg)
     return Promise.reject(new Error(msg))
   }
 )

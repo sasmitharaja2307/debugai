@@ -1,12 +1,12 @@
-# DEBUG AI – Multi-Language Self-Healing Developer Agent
+﻿# DEBUG AI – Multi-Language Self-Healing Developer Agent
 
 > **An AI-powered debugging platform** that monitors developer commands, detects errors across 6 programming languages, generates multiple ranked solutions with time/space complexity analysis, and applies fixes — all from a single dashboard.
 
 ---
 
-## What Makes POLYHEAL AI Different
+## What Makes SELFHEAL AI Different
 
-| Feature | GitHub Copilot | Cursor IDE | Devin | **POLYHEAL AI** |
+| Feature | GitHub Copilot | Cursor IDE | Devin | **SELFHEAL AI** |
 |---------|---------------|-----------|-------|-----------------|
 | Multi-solution with complexity | ✗ | ✗ | Partial | **✓** |
 | Time-travel code state diff | ✗ | ✗ | ✗ | **✓** |
@@ -21,7 +21,7 @@
 ## Architecture
 
 ```
-polyheal/
+SELFHEAL/
 ├── backend/
 │   ├── main.py                  # Entry point (CLI + server launcher)
 │   ├── api_server.py            # FastAPI REST API
@@ -76,7 +76,7 @@ polyheal/
 ### 1. Install Python dependencies
 
 ```bash
-cd polyheal
+cd SELFHEAL
 pip install -r requirements.txt
 ```
 
@@ -165,10 +165,10 @@ npm run compile
 ```
 
 Commands available:
-- `PolyHeal: Run & Heal Command` — runs a command and shows AI solutions in a webview
-- `PolyHeal: Analyze Selected Code` — security-scans highlighted code
-- `PolyHeal: Check Environment` — inspects project config files
-- `PolyHeal: Open Dashboard` — opens the React dashboard
+- `SELFHEAL: Run & Heal Command` — runs a command and shows AI solutions in a webview
+- `SELFHEAL: Analyze Selected Code` — security-scans highlighted code
+- `SELFHEAL: Check Environment` — inspects project config files
+- `SELFHEAL: Open Dashboard` — opens the React dashboard
 
 ---
 

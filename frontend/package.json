@@ -1,9 +1,9 @@
-{
-  "name": "polyheal-dashboard",
+﻿{
+  "name": "selfheal-dashboard",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "POLYHEAL AI – Multi-Language Self-Healing Developer Agent Dashboard",
+  "description": "SELFHEAL AI – Multi-Language Self-Healing Developer Agent Dashboard",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

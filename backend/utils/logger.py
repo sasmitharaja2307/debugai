@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Logger Utility
+﻿"""
+SELFHEAL AI – Logger Utility
 Centralized structured logging for the entire platform.
 """
 
@@ -31,7 +31,7 @@ def get_logger(name: str) -> logging.Logger:
     logger.addHandler(ch)
 
     # File handler (daily rotating)
-    log_file = LOG_DIR / f"polyheal_{datetime.now().strftime('%Y%m%d')}.log"
+    log_file = LOG_DIR / f"selfheal_{datetime.now().strftime('%Y%m%d')}.log"
     fh = logging.FileHandler(log_file, encoding="utf-8")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)

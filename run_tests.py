@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Quick Test Runner
+﻿"""
+SELFHEAL AI – Quick Test Runner
 Run:  python run_tests.py
 """
 
@@ -22,7 +22,7 @@ def run(cmd: list[str]) -> tuple[str, str, int]:
     return r.stdout, r.stderr, r.returncode
 
 def run_command_api(command: str, code_snippet: str = "") -> dict:
-    """Call POST /run-command — full POLYHEAL pipeline: run → detect → solutions."""
+    """Call POST /run-command — full SELFHEAL pipeline: run → detect → solutions."""
     try:
         import requests
         payload = {
@@ -51,7 +51,7 @@ def security_check(code: str) -> dict:
         return {"error": str(e)}
 
 # ──────────────────────────────────────────────────────────────
-# TEST 1 – Run the buggy Python file and let POLYHEAL analyse it
+# TEST 1 – Run the buggy Python file and let SELFHEAL analyse it
 # ──────────────────────────────────────────────────────────────
 section("TEST 1 · Buggy Python  →  examples/test_python.py")
 
@@ -63,7 +63,7 @@ print(f"\n[Exit code: {code}]")
 print("\n[RUNTIME ERROR CAPTURED]")
 print(textwrap.indent(error_output.strip()[:600], "  "))
 
-print("\n[SENDING TO POLYHEAL BACKEND…]")
+print("\n[SENDING TO SELFHEAL BACKEND…]")
 result = run_command_api(f"{PYTHON} {EXAMPLES / 'test_python.py'}", py_code)
 
 if "error" in result:
@@ -119,7 +119,7 @@ print("\n[RUNTIME ERROR CAPTURED]")
 print(textwrap.indent(js_error.strip()[:600], "  "))
 
 if js_error.strip():
-    print("\n[SENDING TO POLYHEAL BACKEND…]")
+    print("\n[SENDING TO SELFHEAL BACKEND…]")
     js_code_text = (EXAMPLES / "test_node.js").read_text()
     js_result = run_command_api(f"node {EXAMPLES / 'test_node.js'}", js_code_text)
     if "error" in js_result:
@@ -139,7 +139,7 @@ if js_error.strip():
 # ──────────────────────────────────────────────────────────────
 section("TEST 4 · Password Strength Checker")
 
-passwords = ["admin123", "P@55w0rd!", "123456", "PolyHeal$2026#Secure"]
+passwords = ["admin123", "P@55w0rd!", "123456", "SELFHEAL$2026#Secure"]
 try:
     import requests
     for pw in passwords:

@@ -1,4 +1,4 @@
-# POLYHEAL AI – Demo: Buggy Python file
+﻿# SELFHEAL AI – Demo: Buggy Python file
 # Bugs present:
 #  1. Missing import (numpy not in requirements)
 #  2. Division by zero

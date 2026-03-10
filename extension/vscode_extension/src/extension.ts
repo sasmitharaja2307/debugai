@@ -1,5 +1,5 @@
-/**
- * POLYHEAL AI – VS Code Extension
+﻿/**
+ * SELFHEAL AI – VS Code Extension
  * Monitors terminal output, surfaces AI solutions inside VS Code.
  */
 
@@ -13,7 +13,7 @@ let lastTerminalOutput = ''
 // ── Helpers ────────────────────────────────────────────────────────────────
 
 function getApiUrl(): string {
-  const cfg = vscode.workspace.getConfiguration('polyheal')
+  const cfg = vscode.workspace.getConfiguration('selfheal')
   return cfg.get<string>('apiUrl', 'http://localhost:8000')
 }
 
@@ -25,7 +25,7 @@ async function callApi<T>(path: string, method: 'GET' | 'POST', body?: object): 
       : await axios.get(url, { timeout: 30_000 })
     return resp.data as T
   } catch (err: any) {
-    outputChannel.appendLine(`[PolyHeal] API error: ${err.message}`)
+    outputChannel.appendLine(`[SelfHeal] API error: ${err.message}`)
     return null
   }
 }
@@ -73,7 +73,7 @@ function buildSolutionsHtml(report: any): string {
 </style>
 </head>
 <body>
-<h2>⚡ POLYHEAL AI – Debug Report</h2>
+<h2>⚡ SELFHEAL AI – Debug Report</h2>
 ${errors ? `<div class="error-list"><b>Detected Errors:</b><ul>${errors}</ul></div>` : ''}
 <h3>Generated Solutions</h3>
 ${solutions || '<p>No solutions generated.</p>'}
@@ -92,38 +92,38 @@ ${solutions || '<p>No solutions generated.</p>'}
 // ── Activation ───────────────────────────────────────────────────────────────
 
 export function activate(context: vscode.ExtensionContext): void {
-  outputChannel = vscode.window.createOutputChannel('POLYHEAL AI')
-  outputChannel.appendLine('POLYHEAL AI extension activated.')
+  outputChannel = vscode.window.createOutputChannel('SELFHEAL AI')
+  outputChannel.appendLine('SELFHEAL AI extension activated.')
 
   // Status bar
   statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100)
-  statusBarItem.command = 'polyheal.openDashboard'
-  statusBarItem.text = '$(zap) PolyHeal'
-  statusBarItem.tooltip = 'POLYHEAL AI – click to open dashboard'
+  statusBarItem.command = 'selfheal.openDashboard'
+  statusBarItem.text = '$(zap) SelfHeal'
+  statusBarItem.tooltip = 'SELFHEAL AI – click to open dashboard'
   statusBarItem.show()
   context.subscriptions.push(statusBarItem)
 
   // ── Command: Run & Heal ──────────────────────────────────────────────────
   context.subscriptions.push(
-    vscode.commands.registerCommand('polyheal.runCommand', async () => {
+    vscode.commands.registerCommand('selfheal.runCommand', async () => {
       const command = await vscode.window.showInputBox({
         prompt: 'Enter the command to run (e.g., python app.py)',
         placeHolder: 'python app.py',
       })
       if (!command) return
 
-      statusBarItem.text = '$(sync~spin) PolyHeal: Analyzing…'
+      statusBarItem.text = '$(sync~spin) SelfHeal: Analyzing…'
       const report = await callApi<any>('/run-command', 'POST', { command })
-      statusBarItem.text = '$(zap) PolyHeal'
+      statusBarItem.text = '$(zap) SelfHeal'
 
       if (!report) {
-        vscode.window.showErrorMessage('PolyHeal: Could not reach the backend API.')
+        vscode.window.showErrorMessage('SelfHeal: Could not reach the backend API.')
         return
       }
 
       const panel = vscode.window.createWebviewPanel(
-        'polyheal.solutions',
-        `PolyHeal – ${command}`,
+        'selfheal.solutions',
+        `SelfHeal – ${command}`,
         vscode.ViewColumn.Beside,
         { enableScripts: true }
       )
@@ -142,16 +142,16 @@ export function activate(context: vscode.ExtensionContext): void {
 
   // ── Command: Analyze Selection ───────────────────────────────────────────
   context.subscriptions.push(
-    vscode.commands.registerCommand('polyheal.analyzeSelection', async () => {
+    vscode.commands.registerCommand('selfheal.analyzeSelection', async () => {
       const editor = vscode.window.activeTextEditor
       if (!editor) return
       const selection = editor.document.getText(editor.selection)
       if (!selection) return
 
       const langId = editor.document.languageId
-      statusBarItem.text = '$(sync~spin) PolyHeal: Scanning…'
+      statusBarItem.text = '$(sync~spin) SelfHeal: Scanning…'
       const secResult = await callApi<any>('/security-check', 'POST', { code: selection })
-      statusBarItem.text = '$(zap) PolyHeal'
+      statusBarItem.text = '$(zap) SelfHeal'
 
       if (!secResult) return
 
@@ -169,7 +169,7 @@ export function activate(context: vscode.ExtensionContext): void {
 
   // ── Command: Check Environment ───────────────────────────────────────────
   context.subscriptions.push(
-    vscode.commands.registerCommand('polyheal.checkEnvironment', async () => {
+    vscode.commands.registerCommand('selfheal.checkEnvironment', async () => {
       const result = await callApi<any>('/environment-status', 'GET')
       if (!result) return
       const criticals = result.critical_count ?? 0
@@ -185,8 +185,8 @@ export function activate(context: vscode.ExtensionContext): void {
 
   // ── Command: Open Dashboard ──────────────────────────────────────────────
   context.subscriptions.push(
-    vscode.commands.registerCommand('polyheal.openDashboard', () => {
-      const cfg = vscode.workspace.getConfiguration('polyheal')
+    vscode.commands.registerCommand('selfheal.openDashboard', () => {
+      const cfg = vscode.workspace.getConfiguration('selfheal')
       const dashboardUrl = cfg.get<string>('apiUrl', 'http://localhost:5173')
       vscode.env.openExternal(vscode.Uri.parse(dashboardUrl))
     })

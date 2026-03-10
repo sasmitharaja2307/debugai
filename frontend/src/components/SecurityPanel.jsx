@@ -1,5 +1,5 @@
-/**
- * POLYHEAL AI – Security Panel
+﻿/**
+ * SELFHEAL AI – Security Panel
  * Code security scanner + password strength validator.
  */
 

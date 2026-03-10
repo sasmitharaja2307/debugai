@@ -1,4 +1,4 @@
-"""POLYHEAL AI – Go Language Handler"""
+﻿"""SELFHEAL AI – Go Language Handler"""
 
 import re
 

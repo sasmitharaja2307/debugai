@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – StackOverflow Search
+﻿"""
+SELFHEAL AI – StackOverflow Search
 Queries the StackOverflow API for relevant questions and answers.
 """
 

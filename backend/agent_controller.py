@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Agent Controller
+﻿"""
+SELFHEAL AI – Agent Controller
 Singleton orchestrator that ties all modules together.
 Follows Observer + Strategy + Singleton patterns.
 """
@@ -80,7 +80,7 @@ class AgentController:
         Full debugging pipeline. Returns a comprehensive report.
         """
         run_id = str(uuid.uuid4())[:8]
-        log.info("=== PolyHeal Run [%s] === command: %s", run_id, command)
+        log.info("=== SELFHEAL Run [%s] === command: %s", run_id, command)
 
         # 1. Pre-run environment analysis
         env_issues = self._env_analyzer.analyze()

@@ -1,4 +1,4 @@
-"""POLYHEAL AI – C++ Language Handler (extends C Handler)"""
+﻿"""SELFHEAL AI – C++ Language Handler (extends C Handler)"""
 
 from backend.languages.c_handler import CHandler
 

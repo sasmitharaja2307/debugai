@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Solution Generator
+﻿"""
+SELFHEAL AI – Solution Generator
 Uses an LLM (OpenAI/Gemini) to generate multiple ranked solutions for a detected error.
 Each solution includes code, time/space complexity, and security evaluation.
 """
@@ -16,7 +16,7 @@ from backend.utils.logger import get_logger
 log = get_logger(__name__)
 
 _PROMPT_TEMPLATE = """
-You are POLYHEAL AI, an expert multi-language debugging assistant.
+You are SELFHEAL AI, an expert multi-language debugging assistant.
 
 ## Error Context
 - Language: {language}

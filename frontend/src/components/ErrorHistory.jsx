@@ -1,5 +1,5 @@
-/**
- * POLYHEAL AI – Error History
+﻿/**
+ * SELFHEAL AI – Error History
  * Shows the self-learning debug memory with past error cases.
  */
 

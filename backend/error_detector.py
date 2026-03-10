@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Error Detector
+﻿"""
+SELFHEAL AI – Error Detector
 Parses raw command output to identify errors across all supported languages.
 Strategy Pattern: each language has its own detection strategy.
 """

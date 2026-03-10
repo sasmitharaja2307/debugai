@@ -1,5 +1,5 @@
-# ─────────────────────────────────────────────────────────────
-# POLYHEAL AI – Python Bug Examples
+﻿# ─────────────────────────────────────────────────────────────
+# SELFHEAL AI – Python Bug Examples
 # Contains 6 different real-world bugs to trigger the agent
 # ─────────────────────────────────────────────────────────────
 

@@ -1,6 +1,6 @@
-"""
-POLYHEAL AI – Live Demo Script
-Runs a buggy Python file, captures the error, calls the POLYHEAL API,
+﻿"""
+SELFHEAL AI – Live Demo Script
+Runs a buggy Python file, captures the error, calls the SELFHEAL API,
 and prints the multi-solution analysis in the terminal.
 """
 
@@ -71,9 +71,9 @@ print(f"\n  Exit Code: {RED(str(result.returncode)) if result.returncode != 0 el
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# STEP 2 – Send to POLYHEAL AI and get multi-solutions
+# STEP 2 – Send to SELFHEAL AI and get multi-solutions
 # ─────────────────────────────────────────────────────────────────────────────
-print_section("STEP 2 ▸ POLYHEAL AI – Detecting & Analyzing Error")
+print_section("STEP 2 ▸ SELFHEAL AI – Detecting & Analyzing Error")
 
 code_snippet = open(DEMO_FILE, encoding="utf-8").read()
 payload = {
@@ -82,7 +82,7 @@ payload = {
     "search_summary": "Python ZeroDivisionError when calling function with empty list"
 }
 
-print(f"  Sending to POLYHEAL API: {CYAN('POST /run-command')}  ...")
+print(f"  Sending to SELFHEAL API: {CYAN('POST /run-command')}  ...")
 report = call_api("/run-command", "POST", payload)
 
 if not report:

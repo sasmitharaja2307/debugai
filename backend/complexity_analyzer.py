@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Complexity Analyzer
+﻿"""
+SELFHEAL AI – Complexity Analyzer
 Evaluates time and space complexity of generated code solutions.
 """
 

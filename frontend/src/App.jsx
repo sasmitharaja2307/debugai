@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
 import { 
@@ -43,7 +43,7 @@ export default function App() {
               <Zap size={18} className="text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-lg gradient-text leading-none">POLYHEAL AI</h1>
+              <h1 className="font-bold text-lg gradient-text leading-none">SELFHEAL AI</h1>
               <p className="text-xs text-slate-400 leading-none mt-0.5">Self-Healing Developer Agent</p>
             </div>
           </div>

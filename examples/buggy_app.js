@@ -1,4 +1,4 @@
-// POLYHEAL AI – Demo: Buggy Node.js file
+﻿// SELFHEAL AI – Demo: Buggy Node.js file
 // Bugs present:
 //  1. Missing npm module (axios not installed)
 //  2. ReferenceError: undefined variable

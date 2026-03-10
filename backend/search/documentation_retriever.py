@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – Documentation Retriever & Search Aggregator
+﻿"""
+SELFHEAL AI – Documentation Retriever & Search Aggregator
 Combines results from all search sources into a unified context summary.
 """
 

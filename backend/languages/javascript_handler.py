@@ -1,4 +1,4 @@
-"""POLYHEAL AI – JavaScript / Node.js Language Handler"""
+﻿"""SELFHEAL AI – JavaScript / Node.js Language Handler"""
 
 import re
 

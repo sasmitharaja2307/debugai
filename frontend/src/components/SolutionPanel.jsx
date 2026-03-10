@@ -1,5 +1,5 @@
-/**
- * POLYHEAL AI – Solution Panel
+﻿/**
+ * SELFHEAL AI – Solution Panel
  * Displays multi-solution comparison cards with complexity metrics.
  */
 

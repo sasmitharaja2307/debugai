@@ -1,5 +1,5 @@
-"""
-POLYHEAL AI – FastAPI REST API Server
+﻿"""
+SELFHEAL AI – FastAPI REST API Server
 Exposes all agent capabilities as HTTP endpoints.
 """
 
@@ -17,7 +17,7 @@ from backend.utils.logger import get_logger
 log = get_logger(__name__)
 
 app = FastAPI(
-    title="POLYHEAL AI API",
+    title="SELFHEAL AI API",
     description="Multi-Language Self-Healing Developer Agent",
     version="1.0.0",
     docs_url="/docs",
@@ -33,7 +33,7 @@ app.add_middleware(
 )
 
 # Lazy-init the agent (uses project root from env)
-_PROJECT_ROOT = os.getenv("POLYHEAL_PROJECT_ROOT", ".")
+_PROJECT_ROOT = os.getenv("SELFHEAL_PROJECT_ROOT", ".")
 _agent: Optional[AgentController] = None
 
 
@@ -82,7 +82,7 @@ class SecurityCheckRequest(BaseModel):
 
 @app.get("/", tags=["health"])
 async def root():
-    return {"status": "ok", "service": "POLYHEAL AI", "version": "1.0.0"}
+    return {"status": "ok", "service": "SELFHEAL AI", "version": "1.0.0"}
 
 
 @app.get("/health", tags=["health"])
